@@ -1,0 +1,34 @@
+.page {
+  @extend %basic-text;
+  color: $main-text;
+
+  &__body {
+    background: $page-bg;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    background: #fff;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &--active {
+      transform: translateX(0);
+    }
+  }
+
+  &__main {
+    
+  }
+}
