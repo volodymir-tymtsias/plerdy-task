@@ -1,0 +1,133 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10px;
+  background-color: $hero-bg;
+  border-radius: 10px;
+
+  @include lg {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 55px;
+    padding: 0 55px;
+  }
+
+  @include xl {
+    padding: 0 64px 0 51px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 565px;
+
+    @include lg {
+      align-items: flex-start;
+      padding-top: 81px;
+      padding-bottom: 20px;
+    }
+
+    @include xl {
+      max-width: 665px;
+    }
+  }
+
+  &__title {
+    @extend %title-text;
+    font-size: 32px;
+    margin-bottom: 20px;
+
+    @include lg {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: normal;
+    margin-bottom: 10px;
+
+    @include lg {
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.005em;
+      margin-bottom: 6px;
+    }
+  }
+
+  &__additional-text {
+    font-size: 12px;
+    line-height: normal;
+    color: $gray-text;
+    margin-bottom: 20px;
+
+    @include lg {
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.0025em;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 20px;
+
+    @include lg {
+      margin-bottom: 59px;
+    }
+  }
+
+  &__block-logo {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include lg {
+      column-gap: 24px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__img-logo {
+    max-height: 24px;
+    object-fit: contain;
+    object-position: center;
+    
+
+    @include lg {
+      max-height: 28px;
+      flex-grow: 1;
+    }
+  }
+
+  &__images {
+    position: relative;
+    width: 230px;
+    height: 273px;
+    border-radius: 12px;
+    background: url('../images/hero.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include lg {
+      margin: auto 0;
+    }
+
+    @include xl {
+      width: 370px;
+      height: 442px;
+      margin-top: 53px;
+      margin-bottom: 35px;
+      border-radius: 19px;
+    }
+  }
+}

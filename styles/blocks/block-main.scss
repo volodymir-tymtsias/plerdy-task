@@ -1,5 +1,7 @@
 .main {
+  margin: 0 auto;
   padding: 60px 10px 29px 10px;
+  max-width: 1256px;
 
   @include lg {
     padding: 107px 30px 40px 30px;
