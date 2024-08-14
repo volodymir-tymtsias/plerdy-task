@@ -1,0 +1,11 @@
+.link {
+  @extend %large-text;
+  font-weight: 400;
+  text-decoration: none;
+  color: $button-bg;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $main-text;
+  }
+}

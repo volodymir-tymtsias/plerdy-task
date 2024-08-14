@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  text-align: center;
+  background-color: $button-bg;
+  border: none;
+  border-radius: 7px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.0025em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @include lg {
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.005em;
+  }
+
+  &:hover {
+    color: $main-text;
+  }
+
+  &--header {
+    padding: 6px 24px;
+    @extend %large-text;
+  }
+}

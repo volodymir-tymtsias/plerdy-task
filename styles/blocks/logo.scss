@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__img {
+    width: 89px;
+    height: 21px;
+    object-position: center;
+    object-fit: contain;
+
+    @include lg {
+      width: 140px;
+      height: 34px;
+    }
+  }
+}

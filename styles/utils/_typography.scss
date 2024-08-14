@@ -1,4 +1,16 @@
 @font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  src: url(../fonts/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  src: url(../fonts/SourceSansPro-SemiBold.ttf);
+}
+
+@font-face {
   font-family: "Roboto";
   font-weight: 400;
   src: url(../fonts/Roboto-Regular.ttf);
@@ -6,8 +18,8 @@
 
 @font-face {
   font-family: "Roboto";
-  font-weight: 600;
-  src: url(../fonts/Roboto-Bold.ttf);
+  font-weight: 500;
+  src: url(../fonts/Roboto-Medium.ttf);
 }
 
 @font-face {
@@ -32,6 +44,13 @@
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-style: normal;
-  line-height: 39px;
-  letter-spacing: 0.01em;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+}
+
+%large-text {
+  font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0;
 }

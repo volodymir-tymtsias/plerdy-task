@@ -1,0 +1,11 @@
+.main {
+  padding: 60px 10px 29px 10px;
+
+  @include lg {
+    padding: 107px 30px 40px 30px;
+  }
+
+  @include xl {
+    padding: 117px 0 74px 0;
+  }
+}

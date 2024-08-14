@@ -1,0 +1,30 @@
+.menu {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+
+    &--mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    height: 100%;
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    color: $menu-text;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $main-text;
+    }
+  }
+}
