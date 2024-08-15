@@ -1,0 +1,61 @@
+.reason {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 372px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $card-bg;
+  overflow: hidden;
+
+  &__title {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 150%;
+
+    @include lg {
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 3;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.0025em;
+
+    @include lg {
+      font-size: 14px;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    height: 91px;
+    z-index: 2;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 130%;
+    color: #ffffff;
+  }
+
+  &__ellipse {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 219px;
+    height: 219px;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(50%, 50%);
+    background-color: $card-number-bg;
+  }
+}

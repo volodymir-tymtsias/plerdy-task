@@ -7,3 +7,37 @@ menuOpenButton.addEventListener('click', () => {
   document.body.classList.toggle('page__body--with-menu');
   mobileMenu.classList.toggle('page__mobile-menu--active');
 });
+
+const newArrivalsSwiper = new Swiper('.reasons__container', {
+  slidesPerView: 1,
+  autoHeight: true,
+  spaceBetween: 15,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    enabled: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+      pagination: {
+        enabled: false,
+      },
+    },
+    1440: {
+      slidesPerView: 4,
+      pagination: {
+        enabled: false,
+      },
+    },
+  },
+});

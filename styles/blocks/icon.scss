@@ -23,4 +23,14 @@
     -webkit-mask-image: url('../images/icons/close.svg');
     mask-image: url('../images/icons/close.svg');
   }
+
+  &--prev {
+    -webkit-mask-image: url('../images/icons/prev.svg');
+    mask-image: url('../images/icons/prev.svg');
+  }
+
+  &--next {
+    -webkit-mask-image: url('../images/icons/next.svg');
+    mask-image: url('../images/icons/next.svg');
+  }
 }
