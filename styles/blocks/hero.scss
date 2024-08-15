@@ -130,4 +130,112 @@
       border-radius: 19px;
     }
   }
+
+  &__image-wrapper1 {
+    position: absolute;
+    top: -8px;
+    left: -22px;
+    height: 93px;
+    width: 118px;
+    border-radius: 5px;
+    padding: 5px;
+    transform: rotate(-1.5deg);
+    opacity: 0;
+    background-color: rgba(241, 247, 255, 0.9);
+    box-shadow: 0 2px 11px rgba(0, 0, 0, 0.08);
+    @include appearance(wrapper1, -1.5deg);
+
+    @include xl {
+      top: -28px;
+      left: -63px;
+      height: 150px;
+      width: 190px;
+      border-radius: 9px;
+      padding: 9px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__image-wrapper2 {
+    position: absolute;
+    bottom: 25px;
+    left: -25px;
+    height: 55px;
+    width: 102px;
+    border-radius: 3.8px;
+    padding: 4px;
+    transform: rotate(-6.7deg);
+    opacity: 0;
+    background-color: rgba(241, 247, 255, 0.9);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+    @include appearance(wrapper2, -6.7deg);
+
+    @include xl {
+      bottom: 123px;
+      left: -104px;
+      height: 90px;
+      width: 165px;
+      border-radius: 6px;
+      padding: 6px;
+      box-shadow: 0 5px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__image-wrapper3 {
+    position: absolute;
+    top: 50px;
+    right: -25px;
+    height: 55px;
+    width: 101px;
+    border-radius: 1.6px;
+    padding: 2.5px;
+    transform: rotate(5.6deg);
+    opacity: 0;
+    background-color: rgba(241, 247, 255, 0.9);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    @include appearance(wrapper3, 5.6deg);
+
+    @include xl {
+      top: 53px;
+      right: -50px;
+      height: 89px;
+      width: 164px;
+      border-radius: 2.6px;
+      padding: 4px;
+      box-shadow: 0 4px 19px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__thumbnail1 {
+    @extend %thumbnail;
+    border-radius: 1.7px;
+    box-shadow: 0 2px 11px rgba(0, 0, 0, 0.08);
+
+    @include xl {
+      border-radius: 2.7px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__thumbnail2 {
+    @extend %thumbnail;
+    border-radius: 2.3px;
+    box-shadow: 0 1.5px 8px rgba(0, 0, 0, 0.08);
+
+    @include xl {
+      border-radius: 3.7px;
+      box-shadow: 0 2.5px 12px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__thumbnail3 {
+    @extend %thumbnail;
+    border-radius: 1.4px;
+    box-shadow: 0 0.6px 3px rgba(0, 0, 0, 0.08);
+
+    @include xl {
+      border-radius: 2.3px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    }
+  }
 }

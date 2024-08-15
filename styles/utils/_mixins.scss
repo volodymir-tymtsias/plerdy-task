@@ -21,3 +21,26 @@
     @content;
   }
 }
+
+@mixin appearance($name, $deg-value) {
+  @keyframes #{$name} {
+    0% {
+      transform: scale(0,0);
+      transform: rotate($deg-value);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.2, 1.2);
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1,1);
+      transform: rotate($deg-value);
+    }
+  }
+
+  animation: $name 1.2s ease-out 0.7s forwards;
+}
+
+
