@@ -14,6 +14,11 @@
 
   text-decoration: none;
 
+  &--full {
+    width: 100%;
+    height: 100%;
+  }
+
   &--menu {
     -webkit-mask-image: url('../images/icons/menu.svg');
     mask-image: url('../images/icons/menu.svg');

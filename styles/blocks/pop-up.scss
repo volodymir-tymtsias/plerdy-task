@@ -1,0 +1,84 @@
+.pop-up {
+  position: fixed;
+  top: 87px;
+  left: 50%;
+  display: none;
+  width: 300px;
+  justify-content: center;
+  transform: translateX(-50%);
+  z-index: 30;
+
+  @include lg {
+    top: 114px;
+    width: 800px;
+  }
+
+  &--active {
+    display: flex;
+  }
+
+  &__img {
+    display: none;
+    width: 50%;
+    background: url('../images/bg-popup.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include lg {
+      display: block;
+      border-radius: 15px 0 0 15px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 38px 31px 11px 31px;
+    background-color: #ffffff;
+    border-radius: 11.25px;
+
+    @include lg {
+      width: 50%;
+      padding: 27px 42px 28px 42px;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 22.5px;
+    height: 22.5px;
+    padding: 3.75px;
+    border-radius: 50%;
+    border: none;
+    background-color: $card-bg;
+    transition: color 0.3s;
+
+    @include lg {
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+    }
+
+    &:hover {
+      color: $button-bg;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-align: center;
+
+    @include lg {
+      font-size: 34px;
+    }
+  }
+}
