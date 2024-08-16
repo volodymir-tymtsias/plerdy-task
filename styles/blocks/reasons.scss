@@ -84,7 +84,11 @@
   &__container {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    height: auto;
+    margin-bottom: 40px;
+    overflow-x: clip;
+    overflow-y: visible;
+    // overflow: hidden;
 
     @include md {
       width: 619px;
@@ -97,21 +101,58 @@
     @include xl {
       width: 1253px;
     }
+
+    & .swiper-pagination {
+      position: absolute;
+      bottom: -25px;
+    }
+  
+    & .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      line-height: 10px;
+      font-size: 10px;
+    }
+  
+    & .swiper-pagination-bullet-active {
+      background: $button-bg;
+    }
   }
 
-  & .swiper-pagination {
-    bottom: -25px;
+  
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 29px;
+
+    @include md {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include lg {
+      margin-bottom: 74px;
+    }
   }
 
-  & .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    line-height: 10px;
-    font-size: 10px;
-  }
+  &__footer-text {
+    text-align: center;
+    max-width: 440px;
+    font-size: 12px;
+    line-height: normal;
 
-  & .swiper-pagination-bullet-active {
-    background: $button-bg;
+    @include md {
+      text-align: left;
+    }
+
+    @include lg {
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.0025em;
+    }
   }
 }
 
