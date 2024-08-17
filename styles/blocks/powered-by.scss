@@ -1,0 +1,31 @@
+.powered-by {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  font-size: 9px;
+  color: #bdbdbd;
+
+  @include lg {
+    font-size: 12px;
+  }
+
+  &__logo {
+    height: 14.5px;
+    object-position: center;
+    object-fit: contain;
+
+    @include lg {
+      height: 20px;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    color: #bdbdbd;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $button-bg;
+    }
+  }
+}

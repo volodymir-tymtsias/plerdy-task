@@ -50,7 +50,15 @@
 
 %large-text {
   font-family: "Source Sans Pro", sans-serif;
-    font-size: 18px;
-    line-height: 160%;
-    letter-spacing: 0;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+%input-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0.0025em;
 }
