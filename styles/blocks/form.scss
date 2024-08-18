@@ -44,6 +44,7 @@
 
   &__form-field {
     height: 28px;
+    width: 100%;
     padding: 6px 9px;
     border-radius: 6px;
     border: 1px solid #d5d5d6;
@@ -53,7 +54,16 @@
     @include lg {
       height: 37px;
       padding: 8px 12px;
+      border-radius: 8px;
       font-size: 14px;
+    }
+
+    &--tel {
+      padding: 6px 9px 6px 65px;
+
+      @include lg {
+        padding: 8px 12px 8px 87px;
+      }
     }
 
     &--error {
@@ -79,6 +89,11 @@
       -webkit-box-shadow: 0 0 0px 1000px $button-disable inset;
       background-color: $button-disable;
     }
+  }
+
+  &__tel-wrapper {
+    position: relative;
+    width: 100%;
   }
 
   &__error {

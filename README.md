@@ -1,5 +1,5 @@
 # Test task Plerdy page
-This dashboard page was created as a test task
+This page was created as a test task
 
 The following technologies were used during creation:
 -	HTML

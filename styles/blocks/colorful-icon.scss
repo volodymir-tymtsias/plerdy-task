@@ -1,0 +1,18 @@
+.colorful-icon {
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &--ua {
+    background-image: url('../images/icons/ua.svg');
+  }
+
+  &--gb {
+    background-image: url('../images/icons/gb.svg');
+  }
+
+  &--us {
+    background-image: url('../images/icons/us.svg');
+  }
+}

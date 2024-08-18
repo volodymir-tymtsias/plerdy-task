@@ -180,7 +180,7 @@
               <span class="icon icon--prev"></span>
             </div>
             <div class="swiper-button-next">
-              <span class="icon icon--next">1</span>
+              <span class="icon icon--next"></span>
             </div>
           </div>
         </div>
@@ -322,17 +322,17 @@
         <div class="pop-up__img"></div>
         <div class="pop-up__content">
           <button type="button" class="pop-up__close" id="closePopUp">
-            <span class="icon icon--close icon--full"></span>
+            <span class="icon icon--close"></span>
           </button>
-  
+
           <h3 class="pop-up__title">
             How to do a Website Audit to Improve SEO & Conversions
           </h3>
-  
+
           <p class="pop-up__text">
             You will get an SMS with a link to the webinar
           </p>
-  
+
           <form action="#" method="get" class="form">
             <div class="form__fields">
               <div class="form__field-wrapper">
@@ -344,22 +344,92 @@
                   class="form__form-field"
                   id="inputName"
                 />
-                <p class="form__error" id="nameError">Error: field Name is required</p>
+                <p class="form__error" id="nameError">
+                  Error: field Name is required
+                </p>
               </div>
-    
+
               <div class="form__field-wrapper">
                 <label for="inputTel" class="form__label">Phone Number</label>
-                <input
-                  name="tel"
-                  type="tel"
-                  placeholder="XX XXX XXXX"
-                  class="form__form-field"
-                  id="inputTel"
-                />
-                <p class="form__error" id="telError">Error: field Phone Number is required</p>
+                <div class="form__tel-wrapper">
+                  <div class="custom-select">
+                    <button
+                      type="button"
+                      class="custom-select__button"
+                      role="combobox"
+                      aria-label="select button"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="select-dropdown"
+                    >
+                      <span class="custom-select__value">
+                        <span class="custom-select__icon colorful-icon colorful-icon--ua"></span>
+                        +380
+                      </span>
+                      <span class="custom-select__arrow"></span>
+                    </button>
+                    
+                    <ul 
+                      class="custom-select__dropdown"
+                      role="listbox" 
+                      id="select-dropdown"
+                    >
+                      <li role="option" class="custom-select__dropdown-item">
+                        <input 
+                          type="radio" 
+                          id="ua" 
+                          name="country-code"
+                          value="+380"
+                          checked
+                        />
+                        <label for="ua">
+                          <span class="custom-select__icon colorful-icon colorful-icon--ua"></span>
+                          +380
+                        </label>
+                      </li>
+              
+                      <li role="option" class="custom-select__dropdown-item">
+                        <input 
+                          type="radio" 
+                          id="gb" 
+                          name="country-code"
+                          value="+44"
+                        />
+                        <label for="gb">
+                          <span class="custom-select__icon colorful-icon colorful-icon--gb"></span>
+                          +44
+                        </label>
+                      </li>
+              
+                      <li role="option" class="custom-select__dropdown-item">
+                        <input 
+                          type="radio" 
+                          id="us" 
+                          name="country-code"
+                          value="+1"
+                        />
+                        <label for="us">
+                          <span class="custom-select__icon colorful-icon colorful-icon--us"></span>
+                          +1
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <input
+                    name="tel"
+                    type="tel"
+                    placeholder="XX XXX XXXX"
+                    class="form__form-field form__form-field--tel"
+                    id="inputTel"
+                  />
+                </div>
+                <p class="form__error" id="telError">
+                  Error: field Phone Number is required
+                </p>
               </div>
             </div>
-  
+
             <div class="form__buttons">
               <button
                 type="button"
@@ -379,20 +449,20 @@
 
             <div class="form__check-wrapper">
               <input
-                  name="conditions"
-                  type="checkbox"
-                  class="form__check"
-                  id="inputConditions"
-                />
-                <label for="inputConditions" class="form__check-label">
-                  By sending up? you agree to our 
-                  <a href="#" class="form__link">Conditions</a> 
-                  and 
-                  <a href="#" class="form__link">Privacy Policy</a> 
-                </label>
+                name="conditions"
+                type="checkbox"
+                class="form__check"
+                id="inputConditions"
+              />
+              <label for="inputConditions" class="form__check-label">
+                By sending up? you agree to our
+                <a href="#" class="form__link">Conditions</a>
+                and
+                <a href="#" class="form__link">Privacy Policy</a>
+              </label>
             </div>
           </form>
-  
+
           <div class="pop-up__powered-by powered-by">
             <img
               src="/images/logotype.svg"
@@ -407,6 +477,5 @@
         </div>
       </section>
     </div>
-
   </body>
 </html>

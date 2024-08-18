@@ -1,0 +1,143 @@
+.custom-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 58px;
+  @extend %input-text;
+  font-size: 10.5px;
+
+    @include lg {
+      width: 77px;
+      font-size: 14px;
+    }
+
+  &__icon {
+    height: 8.25px;
+    width: 12.75px;
+
+    @include lg {
+      height: 11px;
+      width: 17px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 28px;
+    font-size: 10.5px;
+    background-color: transparent;
+    border: none;
+    padding: 6px 3px 6px 9px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %input-text;
+    font-size: 10.5px;
+
+    @include lg {
+      height: 37px;
+      padding: 8px 3px 8px 12px;
+      font-size: 14px;
+    }
+  }
+
+  &__arrow {
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 2px solid $main-text;
+    transition: transform ease-in-out 0.3s;
+
+    @include lg {
+      border-left: 2.75px solid transparent;
+      border-right: 2.75px solid transparent;
+      border-top: 2.75px solid $main-text;
+    }
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border: 1px solid #d5d5d6;
+    border-radius: 6px;
+    margin-top: 3px;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 0.5s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+
+    @include lg {
+      border-radius: 8px;
+      margin-top: 6px;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transform: scaleY(1);
+    }
+  }
+
+  &__dropdown:focus-within {
+    box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+  }
+
+  &__dropdown-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__dropdown-item label {
+    width: 100%;
+    height: 28px;
+    padding: 6px 3px 6px 9px;
+    cursor: pointer;
+
+    @include lg {
+      height: 37px;
+      padding: 8px 3px 8px 12px;
+    }
+  }
+
+  &__dropdown::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  &__dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+  }
+  
+  &__dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+  }
+
+  &__dropdown-item:hover {
+    background-color: #e2f2ff;
+  }
+
+  &__dropdown input:focus ~ label,
+  &__dropdown input:checked ~ label {
+    background-color: $button-disable;
+  }
+
+  &__dropdown input[type="radio"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+  }
+}

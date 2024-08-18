@@ -11,10 +11,65 @@ const inputName = document.querySelector("#inputName");
 const nameError = document.querySelector("#nameError");
 const inputTel = document.querySelector("#inputTel");
 const telError = document.querySelector("#telError");
+const customSelect = document.querySelector(".custom-select");
+const selectBtn = document.querySelector(".custom-select__button");
+const selectArrow = document.querySelector(".custom-select__arrow");
+const selectDropdown = document.querySelector(".custom-select__dropdown");
+const selectedValue = document.querySelector(".custom-select__value");
+const optionsList = document.querySelectorAll(".custom-select__dropdown-item");
 
 let isErrorName = false;
 let isErrorTel = false;
 
+// open/close the dropdown in the select
+selectBtn.addEventListener("click", () => {
+  selectDropdown.classList.toggle("custom-select__dropdown--active");
+  selectArrow.classList.toggle("custom-select__arrow--active");
+  selectBtn.setAttribute(
+    "aria-expanded",
+    selectBtn.getAttribute("aria-expanded") === "true" ? "false" : "true"
+  );
+});
+
+// process the selected option in the select
+optionsList.forEach((option) => {
+  function handler(e) {
+    if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
+      selectedValue.innerHTML = this.children[1].innerHTML;
+      selectDropdown.classList.remove("custom-select__dropdown--active");
+      selectArrow.classList.remove("custom-select__arrow--active");
+    }
+    if (e.key === "Enter") {
+      e.preventDefault();
+      selectedValue.innerHTML = this.children[1].innerHTML;
+      selectDropdown.classList.remove("custom-select__dropdown--active");
+      selectArrow.classList.remove("custom-select__arrow--active");
+    }
+  }
+
+  option.addEventListener("keyup", handler);
+  option.addEventListener("click", handler);
+
+
+  option.children[0].addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  });
+});
+
+// close the dropdown when clicking outside the select
+document.addEventListener("mousedown", (e) => {
+  if (
+    selectDropdown.classList.contains("custom-select__dropdown--active") &&
+    !customSelect.contains(e.target)
+  ) {
+    selectDropdown.classList.remove("custom-select__dropdown--active");
+    selectArrow.classList.remove("custom-select__arrow--active");
+  }
+});
+
+// open/close the mobile menu
 menuOpenButton.addEventListener("click", () => {
   menuOpenButton.classList.toggle("icon--menu");
   menuOpenButton.classList.toggle("icon--close");
@@ -29,6 +84,7 @@ menuOpenButton.addEventListener("click", () => {
   }
 });
 
+//slider control
 const newArrivalsSwiper = new Swiper(".reasons__container", {
   slidesPerView: 1,
   autoHeight: true,
@@ -63,6 +119,7 @@ const newArrivalsSwiper = new Swiper(".reasons__container", {
   },
 });
 
+// pop-up closing processing function
 function closePopUp() {
   closePopUpButton.removeEventListener("click", closePopUp);
   document.body.classList.remove("page__body--with-menu");
@@ -71,6 +128,7 @@ function closePopUp() {
   deleteTelError();
 }
 
+// popup opening handling function
 function openPupUp() {
   if (mobileMenu.classList.contains("page__mobile-menu--active")) {
     menuOpenButton.classList.toggle("icon--menu");
@@ -89,6 +147,7 @@ contactMobileButton.addEventListener("click", openPupUp);
 runToolButton.addEventListener("click", openPupUp);
 boostMyWebsiteButton.addEventListener("click", openPupUp);
 
+// validation of the form when sending
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -104,11 +163,14 @@ form.addEventListener("submit", function (event) {
     isErrorTel = true;
   }
 
+  //if there are no errors, we send the form
   if (!isErrorName && !isErrorTel) {
-    form.reset();
+    form.submit();
+    // form.reset();
   }
 });
 
+// function to remove an error in the name field
 function deleteNameError() {
   if (isErrorName) {
     nameError.classList.remove("form__error--active");
@@ -117,6 +179,7 @@ function deleteNameError() {
   }
 }
 
+// function to remove an error in the phone field
 function deleteTelError() {
   if (isErrorTel) {
     telError.classList.remove("form__error--active");
@@ -125,5 +188,6 @@ function deleteTelError() {
   }
 }
 
+// removing errors when starting to input in the fields
 inputName.oninput = deleteNameError;
 inputTel.oninput = deleteTelError;
